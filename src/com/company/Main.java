@@ -24,26 +24,13 @@ public class Main {
         System.out.println("Количество секунд в лекции "+duration.toSeconds());
 
         System.out.println("Задания 3");
-        DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern("yyyy/MMM/dd/ h:mm:ss a", Locale.ENGLISH);
-        LocalDateTime localDateTime=LocalDateTime.parse("1999/Jun/18/ 11:34:56 PM",dateTimeFormatter);
+        DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern("yyyy/MMM/dd h:mm:ss a", Locale.ENGLISH);
+        String input="1999/Jun/18 07:34:56 PM";
+        LocalDateTime localDateTime=LocalDateTime.parse(input,dateTimeFormatter);
         System.out.println(localDateTime);
-        System.out.println("Задания 3.2");
-
-        LocalDateTime dateTime = LocalDateTime.of(1999,1,18 ,16,34,56);
-        //стандартный формат даты
-        System.out.println("стандартный формат даты LocalDateTime : " + dateTime);
-        //приименяем свой формат даты
-
-        System.out.println(dateTime.format(DateTimeFormatter.ofPattern("yyyy/MMM/dd/ h:mm:ss a")));
-
-
-
-
-
         System.out.println("Задания 4");
-        LocalDateTime localDateTime2=LocalDateTime.of(2021,9,4,18,0);
-        System.out.println(localDateTime2);
-        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("HH:mm:ss yyyy/MM/dd");
+        LocalDateTime localDateTime2=LocalDateTime.of(2001,9,1,23,56);
+        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("HH:mm yyyy/MM/dd");
         String result=localDateTime2.format(formatter);
         System.out.println(result);
 
